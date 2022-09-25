@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+
+import { useState } from 'react';
 import './App.css';
+import Category from './components/Categories';
+import Menu from './components/Menu';
+import items from './data'
+
 
 function App() {
+  // State //
+
+  const [foodMenu, setFoodMenu] = useState(items);
+
+  // comportment //
+  const handlefilterFood = (category)=>{
+    if(category === 'all'){
+      setFoodMenu(items);
+      return;
+    }
+    const foodFilted =  items.filter(item => category === item.category);
+    setFoodMenu(foodFilted);
+  
+  }
+
+// Return //
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Chinese Food Menu</h1>
+      <Category  handlefilterFood={handlefilterFood}/>
+      <Menu  foodMenu={foodMenu}/>
+ 
     </div>
   );
 }

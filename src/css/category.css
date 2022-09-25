@@ -1,0 +1,30 @@
+.btn-container{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 40px 0;
+}
+.btn{
+    width: 100px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: blanchedalmond;
+    list-style-type: none;
+    border: none;
+    transition: all .3s ease;
+}
+.btn:hover{
+    color: #fff;
+    background-color: rgb(230, 187, 122) ;
+}
+/* .active-btn{
+    border: 1px solid rgb(118, 118, 233);
+    background-color: red;
+}
+.btn:active{
+    border: 2px solid blanchedalmond;
+     background-color: red; 
+} */
